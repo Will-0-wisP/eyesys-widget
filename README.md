@@ -139,26 +139,6 @@ All settings persist to `%APPDATA%\eyesys-widget\eyesys-config.json`.
   Windows itself performs the actual file copy when you drop an item onto Explorer or
   another app — the widget only starts the OS-level drag.
 
-## Project structure
-
-```
-main.js          Electron main process: windows, CPU sampling, screenshot capture,
-                  z-order/foreground helper, folder listing + sorting, all IPC handlers
-layout.js         Panel placement math (which side to open on, anchoring) — pure
-                  functions, no Electron dependency, so they're easy to unit test
-preload.js        Context-isolated bridge exposing a narrow API to both renderers
-index.html / icon.js / icon.css      the eye icon window
-panel.html / panel.js / panel.css    the glass folder panel window
-eyes/
-  manifest.js      the list of selectable eyes, shared by both windows
-  basic/           simple.svg, double.svg, triple.svg (CPU tiers 1–3)
-  mangekyou/       the 15 selectable eyes (tier 4 / panel-open)
-build/
-  icon.ico         app + installer icon (16–256px, generated from icon-source-2048.png)
-  icon-source-2048.png   high-res master, kept for re-deriving the icon
-  LICENSE.txt      the installer's license/agreement page text
-  installer.nsh    custom NSIS hooks (close app before install/uninstall)
-package.json       npm scripts + electron-builder config
 ```
 
 ## Adding your own eye artwork
@@ -189,23 +169,6 @@ The `id` must match the filename (without `.svg`).
   in [Building a Windows installer](#building-a-windows-installer).
 - **The glass blur is a point-in-time snapshot**, not a live effect (explained above).
 
-## Publishing this repo to GitHub
-
-`node_modules/` and `dist/` are already excluded via `.gitignore`, so they won't bloat
-your first push.
-
-```powershell
-cd eyesys-widget
-git init
-git add .
-git commit -m "Initial commit: Eyesys Widget"
-git branch -M main
-git remote add origin https://github.com/<your-username>/eyesys-widget.git
-git push -u origin main
-```
-
-(Create the empty repository on GitHub first — either on the web, or with `gh repo create
-eyesys-widget --public --source=. --remote=origin` if you have the GitHub CLI.)
 
 ## License & artwork
 

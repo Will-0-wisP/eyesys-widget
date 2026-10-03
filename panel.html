@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data: file:; style-src 'self' 'unsafe-inline'; script-src 'self'" />
+<title>Eyesys Folder Panel</title>
+<link rel="stylesheet" href="panel.css" />
+</head>
+<body>
+  <div id="stage" class="dir-left">
+    <div id="panel">
+      <div id="glass-bg"></div>
+
+      <div id="panel-header">
+        <input id="panel-title" type="text" maxlength="60" spellcheck="false" value="Folder Preview"
+               title="Click to rename" aria-label="Panel title" />
+        <div id="panel-header-actions">
+          <button id="gear-btn" title="Settings">&#9881;</button>
+          <button id="close-btn" title="Close">&times;</button>
+        </div>
+      </div>
+
+      <div id="panel-path" title="">/</div>
+
+      <div id="settings-row" class="hidden">
+        <div class="settings-group">
+          <div class="group-title">Folder settings</div>
+
+          <label class="set-label">Watched folder</label>
+          <div id="folder-row">
+            <span id="folder-path-readout" title=""></span>
+            <button id="choose-folder-btn">Change&hellip;</button>
+          </div>
+
+          <label class="set-label">View</label>
+          <div id="view-seg" class="seg">
+            <button data-view="list">List</button>
+            <button data-view="grid">Grid</button>
+          </div>
+
+          <label class="set-label">Sort by</label>
+          <div id="sort-row">
+            <select id="sort-select">
+              <option value="name">Name</option>
+              <option value="modified">Date modified</option>
+              <option value="size">Size</option>
+              <option value="type">Type</option>
+            </select>
+            <div id="sort-dir-seg" class="seg">
+              <button data-dir="asc" title="Ascending">&uarr;</button>
+              <button data-dir="desc" title="Descending">&darr;</button>
+            </div>
+          </div>
+
+          <label class="set-label">Drag files to copy <span class="hint-inline">(drag an item out onto any folder/app)</span></label>
+          <div id="drag-seg" class="seg">
+            <button data-drag="on">On</button>
+            <button data-drag="off">Off</button>
+          </div>
+
+          <div class="hint">Resize the panel by dragging its corner handle.</div>
+        </div>
+
+        <label class="set-label">Show as</label>
+        <div id="layer-seg" class="seg">
+          <button data-layer="overlay" title="Float above every app">Overlay on apps</button>
+          <button data-layer="desktop" title="Sit on the desktop, behind other windows">Desktop only</button>
+        </div>
+
+        <label class="set-label">Icon size <span id="size-readout">90px</span></label>
+        <input id="size-slider" type="range" min="48" max="160" step="2" value="90" />
+
+        <label class="set-label" id="opacity-label">Eye opacity <span id="opacity-readout">100%</span></label>
+        <input id="opacity-slider" type="range" min="20" max="100" step="1" value="100" />
+        <div class="hint" id="opacity-hint">Only used in &ldquo;Overlay on apps&rdquo; mode.</div>
+
+        <label class="set-label">Spin speed <span id="spin-readout">5 rpm</span></label>
+        <input id="spin-slider" type="range" min="0" max="60" step="1" value="5" />
+
+        <label class="set-label">Glass blur <span id="blur-readout">25px</span></label>
+        <input id="blur-slider" type="range" min="0" max="50" step="1" value="25" />
+
+        <label class="set-label">Selected eye <span>(71&ndash;100% CPU &amp; when open)</span></label>
+        <div id="eye-grid"></div>
+
+        <div class="set-buttons">
+          <button id="open-eyes-btn">Custom eyes folder&hellip;</button>
+        </div>
+      </div>
+
+      <ul id="file-list"></ul>
+
+      <div id="panel-footer">
+        <span id="count-readout"></span>
+        <span id="cpu-readout">CPU: --%</span>
+      </div>
+
+      <div id="resize-handle" title="Drag to resize"></div>
+    </div>
+  </div>
+  <script src="eyes/manifest.js"></script>
+  <script src="panel.js"></script>
+</body>
+</html>

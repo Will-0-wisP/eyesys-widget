@@ -1,0 +1,53 @@
+{
+  "name": "eyesys-widget",
+  "version": "2.0.0",
+  "description": "Eyesys Widget: a floating desktop widget with a real-time CPU monitor and a glass folder explorer for Windows 11",
+  "main": "main.js",
+  "scripts": {
+    "postinstall": "node node_modules/electron/install.js",
+    "prestart": "node node_modules/electron/install.js",
+    "start": "electron .",
+    "dist": "electron-builder --win"
+  },
+  "author": "You",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.local.eyesyswidget",
+    "productName": "Eyesys Widget",
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "layout.js",
+      "index.html",
+      "icon.js",
+      "icon.css",
+      "panel.html",
+      "panel.js",
+      "panel.css",
+      "eyes/**/*",
+      "build/icon.ico",
+      "package.json"
+    ],
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "license": "build/LICENSE.txt",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Eyesys Widget",
+      "runAfterFinish": true,
+      "include": "build/installer.nsh"
+    }
+  }
+}

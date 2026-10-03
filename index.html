@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data: file:; style-src 'self' 'unsafe-inline'; script-src 'self'" />
+<title>Eyesys Widget</title>
+<link rel="stylesheet" href="icon.css" />
+</head>
+<body>
+  <div id="icon" title="Click to open &middot; drag to move &middot; Ctrl+scroll to resize">
+    <!-- eye-idle turns forever; eye-click does the 300 ms click spin -->
+    <div id="eye-idle">
+      <div id="eye-click">
+        <img class="eye-layer" id="eyeA" alt="" draggable="false" />
+        <img class="eye-layer" id="eyeB" alt="" draggable="false" />
+      </div>
+    </div>
+    <!-- red veil used while one eye changes into another -->
+    <div id="veil"></div>
+  </div>
+  <script src="eyes/manifest.js"></script>
+  <script src="icon.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+EYESYS WIDGET
+Installation & Use Agreement
+
+This is a personal desktop utility built for and provided to you directly.
+By clicking "I Agree" you accept the following:
+
+1. NO WARRANTY. This software is provided "as is", without warranty of any
+   kind. The author is not liable for any damages or data loss arising from
+   its installation or use.
+
+2. WHAT IT DOES. This application installs a small always-available icon on
+   your desktop that displays live CPU usage and a folder-preview panel for
+   a folder you choose. It reads directory listings and file metadata only
+   within the folder you select in Settings, and does not transmit any data
+   over the network.
+
+3. BUNDLED ARTWORK. The eye artwork bundled with this application ("eyes/"
+   folder) may be derived from, or inspired by, third-party sources supplied
+   during development. You are responsible for ensuring you have the rights
+   to install and use this artwork on this machine. You may replace any of
+   these files with your own artwork at any time (see the app's README).
+
+4. UNINSTALLING. Uninstalling this application will close any running copy
+   of it first, then remove the installed program files. Your chosen
+   watched-folder path and other preferences (stored separately under your
+   Windows user profile) are not deleted by the uninstaller unless you
+   remove them yourself.
+
+5. PERSONAL USE. This build is intended for your own personal use on your
+   own machine. If you intend to share or redistribute it, you are
+   responsible for reviewing the licensing of all bundled third-party
+   artwork first.
+
+Click "I Agree" to continue installing, or "Cancel" to exit setup.
